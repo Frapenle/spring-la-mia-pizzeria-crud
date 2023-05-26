@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Pizza index</title>
+</head>
+<body>
+	<div th:if="${pizze.size() > 0}">
+		<div>
+			<ul th:each="pizza : ${pizze}">
+				<li>
+					<p th:text="${pizza.id + ' - ' + pizza.name + ' ' + pizza.description + ' ' + pizza.price}"></p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div th:if="${pizze.size() == 0}">
+		<p>Non sono presenti pizze.</p>
+	</div>
+
+</body>
+</html>
