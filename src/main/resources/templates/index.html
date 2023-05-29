@@ -7,8 +7,8 @@
 <body>
 	<div th:if="${pizze.size() > 0}">
 		<div>
-			<ul th:each="pizza : ${pizze}">
-				<li>
+			<ul>
+				<li th:each="pizza : ${pizze}">
 					<p th:text="${pizza.id + ' - ' + pizza.name + ' ' + pizza.description + ' ' + pizza.price}"></p>
 				</li>
 			</ul>
