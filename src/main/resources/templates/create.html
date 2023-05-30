@@ -15,19 +15,31 @@
 				<form method="post">
 				  <div class="mb-3">
 				    <label for="name" class="form-label">Nome</label>
-				    <input type="text" class="form-control" id="name" name="name">
+				    <input type="text" class="form-control" id="name" name="name" th:value="*{name}">
+				    <small class="text-danger" th:if="${errors != null && errors.hasFieldErrors('name')}">
+				    	[[ ${errors.getFieldError('name').defaultMessage} ]]
+				    </small>
 				  </div>
 				  <div class="mb-3">
 				    <label for="description" class="form-label">Descrizione</label>
-				    <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+				    <textarea class="form-control" id="description" name="description" rows="3" th:text="*{description}"></textarea>
+				    <small class="text-danger" th:if="${errors != null && errors.hasFieldErrors('description')}">
+				    	[[ ${errors.getFieldError('description').defaultMessage} ]]
+				    </small>
 				  </div>
 				  <div class="mb-3">
 				    <label class="form-label" for="price">Prezzo</label>
-				    <input type="number" class="form-control" step="0.1" id="price" name="price">
+				    <input type="number" class="form-control" step="0.1" id="price" name="price" th:value="*{price}">
+				    <small class="text-danger" th:if="${errors != null && errors.hasFieldErrors('price')}">
+				    	[[ ${errors.getFieldError('price').defaultMessage} ]]
+				    </small>
 				  </div>
 				  <div class="mb-3">
 				    <label class="form-label" for="imageUrl">Link immagine</label>
-				    <input type="text" class="form-control" id="imageUrl" name="imageUrl">
+				    <input type="text" class="form-control" id="imageUrl" name="imageUrl" th:value="*{imageUrl}">
+				    <small class="text-danger" th:if="${errors != null && errors.hasFieldErrors('imageUrl')}">
+				    	[[ ${errors.getFieldError('imageUrl').defaultMessage}]]
+				    </small>
 				  </div>
 				  <div class="d-flex justify-content-between">
 				  	<button type="submit" class="btn btn-primary">Aggiungi</button>

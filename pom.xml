@@ -44,6 +44,12 @@
 		    <artifactId>bootstrap</artifactId>
 		    <version>5.2.3</version>
 		</dependency>
+		
+		<!-- VALIDATION -->
+		<dependency> 
+		    <groupId>org.springframework.boot</groupId> 
+		    <artifactId>spring-boot-starter-validation</artifactId> 
+		</dependency>
 
 		<!-- Database -->
 		<dependency>
