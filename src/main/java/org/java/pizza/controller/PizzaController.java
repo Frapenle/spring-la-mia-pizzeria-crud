@@ -25,7 +25,7 @@ public class PizzaController {
 		model.addAttribute("pizze", pizze);
 		return "index";
 	}
-	
+//	SHOW
 	@GetMapping("/pizza/{id}")
 	public String show(Model model, @PathVariable("id") Integer id) {
 		Optional<Pizza> optionalPizza = pizzaService.findById(id);
@@ -43,10 +43,12 @@ public class PizzaController {
 		return "index";
 	}
 	
+//	CREATE
 	@GetMapping("/pizze/create")
 	public String createPizza(Model model) {
 		return "create";
 	}
+	
 	@PostMapping("/pizze/create")
 	public String storePizza(@ModelAttribute Pizza pizza) {
 		
