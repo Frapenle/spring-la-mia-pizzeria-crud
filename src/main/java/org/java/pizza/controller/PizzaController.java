@@ -56,8 +56,8 @@ public class PizzaController {
 	
 	@PostMapping("/pizze/create")
 	public String storePizza(Model model,
-							@Valid @ModelAttribute Pizza pizza,
-							BindingResult bindingResult) {
+			@Valid @ModelAttribute Pizza pizza,
+			BindingResult bindingResult) {
 		if(bindingResult.hasErrors()) {
 			for (ObjectError err : bindingResult.getAllErrors())
 				System.err.println("Error: " + err.getDefaultMessage());
