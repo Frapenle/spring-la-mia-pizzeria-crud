@@ -12,12 +12,18 @@
 		<div th:if="${pizze.size() > 0}">
 			<div>
 				<ul class="list-group">
-					<li class="list-group-item" th:each="pizza : ${pizze}">
-						<a class="mx-auto text-decoration-none" th:href="@{'/pizza/' + ${pizza.id}}"
-							th:text="${pizza.id + ' - ' + pizza.name}">
-						</a>
-						<small class="">[[${ pizza.description}]]</small>
-						<span class="text-end" th:text=" | ${pizza.price} &euro;|"></span>
+					<li class="list-group-item d-flex justify-content-between w-100 align-items-center" th:each="pizza : ${pizze}">
+						<div>
+							<a class="text-decoration-none" th:href="@{'/pizza/' + ${pizza.id}}"
+								th:text="${pizza.id + ' - ' + pizza.name}">
+							</a>
+							<small class="">[[${ pizza.description}]]</small>
+							<span class="text-end" th:text=" | ${pizza.price} &euro;|"></span>
+						</div>
+						<div>		
+							<a th:href="@{'/pizze/update/' + ${pizza.id}}" class="btn btn-warning">Modifica</a>
+							<a th:href="@{'/pizze/delete/' + ${pizza.id}}" class="btn btn-dark">Elimina</a>
+						</div>
 					</li>
 				</ul>
 			</div>
